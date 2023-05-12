@@ -37,6 +37,9 @@
 ### Key Features <a name="key-features"></a>
 
 - **[Make comment as a user]**
+- **[Set up associations between models]**
+- **[Write SQL queries with Active Record]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

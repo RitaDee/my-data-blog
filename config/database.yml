@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: my_data_blog_development
+  database: data_blog_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -56,7 +56,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: my_data_blog_test
+  database: data_blog_test
   username: postgres
   password: John1v14!@
 
@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: my_data_blog_production
+  database: data_blog_production
   username: postgres
-  password: <%= ENV["MY_DATA_BLOG_DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATA_BLOG_DATABASE_PASSWORD"] %>
