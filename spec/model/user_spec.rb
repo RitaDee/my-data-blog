@@ -17,11 +17,11 @@ RSpec.describe User, type: :model do
     user.name = nil
     expect(user).to_not be_valid
   end
-  it 'it is not valid with negeative number for post conuter' do
+  it 'it is not valid with negeative number for post counter' do
     user.posts_counter = -1
     expect(user).to_not be_valid
   end
-  it 'it is not valid with string for post conuter' do
+  it 'it is not valid with string for post counter' do
     user.posts_counter = 'string'
     expect(user).to_not be_valid
   end
