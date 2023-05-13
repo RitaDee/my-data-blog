@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
+
+  let(:user) do
+    User.create(name: 'Anything', photo: 'http://rrrrrrrr/anything.jpg', bio: 'Anything test', postscounter: 0)
+  end
+
+  let(:post) do
+    Post.create(author: user, title: 'Hello', text: 'This is my first post')
+  end
+
   user = User.new(name: 'Anything',
                   photo: 'http://rrrrrrrr/anything.jpg',
                   bio: 'Anything test',
@@ -43,4 +52,14 @@ RSpec.describe Post, type: :model do
     subject.likes_counter = 'string'
     expect(subject).to_not be_valid
   end
+
+  it 'returns its five most recent comments' do
+    subject.save
+    Comment.create(text: 'TEst comments', author: user, post:)
+    Comment.create(text: 'TEst comments', author: user, post:)
+    Comment.create(text: 'TEst comments', author: user, post:)
+    Comment.create(text: 'TEst comments', author: user, post:)
+    Comment.create(text: 'TEst comments', author: user, post:)
+    expect(subject.five_most_recent_comments.length).to eq(5)
+    end
 end
