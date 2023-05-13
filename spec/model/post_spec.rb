@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   let(:user) do
     User.create(name: 'Anything', photo: 'http://rrrrrrrr/anything.jpg', bio: 'Anything test', posts_counter: 0)
   end
@@ -65,5 +64,4 @@ RSpec.describe Post, type: :model do
     Comment.create(text: 'Test comments', author: user, post: subject_post)
     expect(subject_post.five_most_recent_comments.length).to eq(5)
   end
-
 end

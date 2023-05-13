@@ -10,8 +10,9 @@ RSpec.describe User, type: :model do
     )
   end
 
-   let(:first_post) do
-    Post.create(author: user, title: 'Hello First', text: 'This is my first post', likes_counter: 1, comments_counter: 0)
+  let(:first_post) do
+    Post.create(author: user, title: 'Hello First', text: 'This is my first post', likes_counter: 1,
+                comments_counter: 0)
   end
 
   let(:second_post) do
@@ -20,7 +21,8 @@ RSpec.describe User, type: :model do
   end
 
   let(:third_post) do
-    Post.create(author: user, title: 'Hello Third', text: 'This is my third post', likes_counter: 3, comments_counter: 0)
+    Post.create(author: user, title: 'Hello Third', text: 'This is my third post', likes_counter: 3,
+                comments_counter: 0)
   end
 
   it 'is valid with valid attributes' do
