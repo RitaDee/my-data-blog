@@ -27,19 +27,19 @@ RSpec.describe Post, type: :model do
     subject.title = title
     expect(subject).to_not be_valid
   end
-  it 'it is not valid with negeative number for comment conuter' do
+  it 'it is not valid with negeative number for comment counter' do
     subject.comments_counter = -1
     expect(subject).to_not be_valid
   end
-  it 'it is not valid with string for comment conuter' do
+  it 'it is not valid with string for comment counter' do
     subject.comments_counter = 'string'
     expect(subject).to_not be_valid
   end
-  it 'it is not valid with negeative number for like conuter' do
+  it 'it is not valid with negeative number for like counter' do
     subject.likes_counter = -1
     expect(subject).to_not be_valid
   end
-  it 'it is not valid with string for post conuter' do
+  it 'it is not valid with string for post counter' do
     subject.likes_counter = 'string'
     expect(subject).to_not be_valid
   end
