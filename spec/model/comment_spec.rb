@@ -14,11 +14,10 @@ RSpec.describe Comment, type: :model do
   )
 
   subject(:comment) do
-  Comment.new(text: 'TEst comments',
-              author: user,
-              post: post)
-end
-
+    Comment.new(text: 'TEst comments',
+                author: user,
+                post: post)
+  end
 
   it 'is valid with valid attributes' do
     expect(comment).to be_valid
