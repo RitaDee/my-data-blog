@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   subject(:user) do
     User.new(
       name: 'Something',
-      photo: 'http://localhost:3000/something.jpg',
+      photo: 'http://rrrrrrrr/something.jpg',
       bio: 'Something test',
       posts_counter: 0
     )

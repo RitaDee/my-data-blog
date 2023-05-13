@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   user = User.new(name: 'Anything',
-                  photo: 'http://localhost:3000/anything.jpg',
+                  photo: 'http://rrrrrrrr/anything.jpg',
                   bio: 'Anything test',
                   posts_counter: 0)
   subject do

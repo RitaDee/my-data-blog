@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   user = User.new(name: 'Something',
-                  photo: 'http://localhost:3000/something.jpg',
+                  photo: 'http://rrrrrrrr/something.jpg',
                   bio: 'Something test',
                   posts_counter: 0)
   post = Post.new(
