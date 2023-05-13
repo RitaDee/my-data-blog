@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   private
 
   def update_user_post_counter
-    author.increment!(:postscounter)
+    author.increment!(:posts_counter)
   end
 
   def five_most_recent_comments
