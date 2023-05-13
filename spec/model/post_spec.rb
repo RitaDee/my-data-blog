@@ -3,63 +3,67 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
 
   let(:user) do
-    User.create(name: 'Anything', photo: 'http://rrrrrrrr/anything.jpg', bio: 'Anything test', postscounter: 0)
+    User.create(name: 'Anything', photo: 'http://rrrrrrrr/anything.jpg', bio: 'Anything test', posts_counter: 0)
   end
 
   let(:post) do
     Post.create(author: user, title: 'Hello', text: 'This is my first post')
   end
 
-  user = User.new(name: 'Anything',
-                  photo: 'http://rrrrrrrr/anything.jpg',
-                  bio: 'Anything test',
-                  posts_counter: 0)
-  subject do
+  subject(:subject_post) do
     described_class.new(
-      title: 'Anything',
-      text: 'Anything test',
+      title: 'Hello',
+      text: 'This is my first post',
       author: user,
       comments_counter: 0,
       likes_counter: 0
     )
   end
+
   it 'is valid with valid attributes' do
-    expect(subject).to be_valid
+    expect(subject_post).to be_valid
   end
+
   it 'is not valid without a title' do
-    subject.title = nil
-    expect(subject).to_not be_valid
+    subject_post.title = nil
+    expect(subject_post).to_not be_valid
   end
-  it 'is not valid with a length for title  more than 250 ' do
+
+  it 'is not valid with a length for title more than 250' do
     title = ''
     title += 'a' while title.length < 251
-    subject.title = title
-    expect(subject).to_not be_valid
+    subject_post.title = title
+    expect(subject_post).to_not be_valid
   end
-  it 'it is not valid with negeative number for comment counter' do
-    subject.comments_counter = -1
-    expect(subject).to_not be_valid
+
+  it 'is not valid with negative number for comments counter' do
+    subject_post.comments_counter = -1
+    expect(subject_post).to_not be_valid
   end
-  it 'it is not valid with string for comment counter' do
-    subject.comments_counter = 'string'
-    expect(subject).to_not be_valid
+
+  it 'is not valid with string for comments counter' do
+    subject_post.comments_counter = 'string'
+    expect(subject_post).to_not be_valid
   end
-  it 'it is not valid with negeative number for like counter' do
-    subject.likes_counter = -1
-    expect(subject).to_not be_valid
+
+  it 'is not valid with negative number for likes counter' do
+    subject_post.likes_counter = -1
+    expect(subject_post).to_not be_valid
   end
-  it 'it is not valid with string for post counter' do
-    subject.likes_counter = 'string'
-    expect(subject).to_not be_valid
+
+  it 'is not valid with string for likes counter' do
+    subject_post.likes_counter = 'string'
+    expect(subject_post).to_not be_valid
   end
 
   it 'returns its five most recent comments' do
-    subject.save
-    Comment.create(text: 'TEst comments', author: user, post:)
-    Comment.create(text: 'TEst comments', author: user, post:)
-    Comment.create(text: 'TEst comments', author: user, post:)
-    Comment.create(text: 'TEst comments', author: user, post:)
-    Comment.create(text: 'TEst comments', author: user, post:)
-    expect(subject.five_most_recent_comments.length).to eq(5)
-    end
+    post.save
+    Comment.create(text: 'Test comments', author: user, post: subject_post)
+    Comment.create(text: 'Test comments', author: user, post: subject_post)
+    Comment.create(text: 'Test comments', author: user, post: subject_post)
+    Comment.create(text: 'Test comments', author: user, post: subject_post)
+    Comment.create(text: 'Test comments', author: user, post: subject_post)
+    expect(subject_post.five_most_recent_comments.length).to eq(5)
+  end
+
 end
