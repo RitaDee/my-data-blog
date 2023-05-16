@@ -4,9 +4,9 @@ RSpec.describe 'Posts', type: :request do
   let!(:user) do
     User.create(
       name: 'Rails',
-      photo: 'http://localhost:3000/rrrrrr.png',
-      bio: 'Something',
-      posts_counter: 10
+      photo: 'http://rrrrrr.png',
+      bio: 'Testing',
+      posts_counter: 20
     )
   end
 
@@ -15,8 +15,8 @@ RSpec.describe 'Posts', type: :request do
       title: 'Ruby',
       text: 'Ruby is awesome',
       author: user,
-      comments_counter: 10,
-      likes_counter: 10
+      comments_counter: 20,
+      likes_counter: 20
     )
   end
 
