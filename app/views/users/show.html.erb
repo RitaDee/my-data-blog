@@ -1,5 +1,5 @@
 <h1>A given User detail with posts</h1>
-<%= render 'shared/user', user:@user%>
+<%= render 'partials/user', user:@user%>
 
 <div class="user_bio">
  <h3>Bio</h3>
@@ -9,7 +9,7 @@
 <div class="user_post">
    <% @user.most_three_recent_post.each do |post| %>
 
-      <%= render 'shared/post', post:post %>
+      <%= render 'partials/post', post:post %>
    <%end%>
 
 </div>
