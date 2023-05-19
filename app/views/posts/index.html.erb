@@ -6,7 +6,7 @@
 
       <%= render 'partials/post', post:post %>
 
-     <% if  !post.five_most_recent_comments.empty?%>
+     <% if  !five_most_recent_comments.empty?%>
          <div class ="post_comment">
      <%post.five_most_recent_comments.each do |comment| %>
           <%= render 'partials/comment', comment:comment %>
