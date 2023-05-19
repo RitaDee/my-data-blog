@@ -3,35 +3,35 @@ h1 {
 }
 
 .comment_form {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .comment_input {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
 }
 
 .error_message {
-    color: red;
-    margin-top: 5px;
+  color: red;
+  margin-top: 5px;
 }
 
 .post_form {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .post_form h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .post_title,
 .post_text {
-    width: 100%;
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
 }
 
 /* .post_button {
@@ -47,19 +47,19 @@ h1 {
 } */
 
 .like_form {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .post_button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }
 
 .post_button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .user {
