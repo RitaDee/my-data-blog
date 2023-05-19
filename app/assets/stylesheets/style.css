@@ -17,6 +17,10 @@ h1 {
     margin-top: 5px;
 }
 
+.like_form {
+    margin-top: 10px;
+}
+
 .post_button {
     background-color: #4CAF50;
     color: white;
