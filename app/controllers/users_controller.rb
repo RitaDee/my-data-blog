@@ -1,12 +1,7 @@
-class UsersController < Devise::RegistrationsController
-  include Devise::Controllers::Helpers
-
-  layout 'users'
-  before_action :authenticate_user!
+class UsersController < ApplicationController
   
   def index
     @users = User.all
-    @current_user = current_user
   end
 
   def show
