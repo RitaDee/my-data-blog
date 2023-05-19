@@ -43,6 +43,8 @@
 - **[Write unit tests for models]**
 - **[Write unit tests for controllers]**
 - **[Set up views for models]**
+- **[Use preprocessed HTML file with embedded Ruby code]**
+- **[Use layouts and templates for shared content]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
