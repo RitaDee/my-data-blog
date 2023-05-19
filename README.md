@@ -42,7 +42,7 @@
 - **[Use validations for models]**
 - **[Write unit tests for models]**
 - **[Write unit tests for controllers]**
-
+- **[Set up views for models]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

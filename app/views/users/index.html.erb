@@ -1,16 +1,4 @@
-<h1>All Users</h1>
-
-<ul>
-  <li>
-  Rita
-  </li>
-  <li>
-  Ayo
-  </li>
-  <li>
-  Ochuba
-  </li>
-  <li>
-  Frempong
-  </li>
-</ul>
+<h1>List Users </h1>
+<% @users.each do |user| %>
+    <%= render 'partials/user', user:user%>
+<%end%>

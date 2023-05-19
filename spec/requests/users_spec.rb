@@ -24,7 +24,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'user responsed body with correct place holder' do
-      expect(response.body).to include('All Users')
+      expect(response.body).to include('List Users')
     end
   end
 
@@ -50,7 +50,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'user detail responsed body with correct place holder' do
-      expect(response.body).to include('Hello Users')
+      expect(response.body).to include('A given User detail with posts')
     end
   end
 end
