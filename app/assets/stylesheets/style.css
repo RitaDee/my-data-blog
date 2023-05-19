@@ -17,6 +17,35 @@ h1 {
     margin-top: 5px;
 }
 
+.post_form {
+    margin-top: 10px;
+}
+
+.post_form h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.post_title,
+.post_text {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+/* .post_button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.post_button:hover {
+    background-color: #45a049;
+} */
+
 .like_form {
     margin-top: 10px;
 }
