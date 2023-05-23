@@ -5,8 +5,10 @@ RSpec.feature 'User Post Index Page', type: :feature do
     @user = User.create(name: 'Rita', photo: 'profile.jpg', bio: 'Teacher from Brazil.', posts_counter: 0)
     @user.save
 
-    @first_post = Post.create(title: 'Post 1', text: 'Lorem ipsum dolor sit amet.', comments_counter: 0, likes_counter: 0, author_id: @user.id)
-    @second_post = Post.create(title: 'Post 2', text: 'Consectetur adipiscing elit.', comments_counter: 0, likes_counter: 0, author_id: @user.id)
+    @first_post = Post.create(title: 'Post 1', text: 'Lorem ipsum dolor sit amet.', comments_counter: 0,
+                              likes_counter: 0, author_id: @user.id)
+    @second_post = Post.create(title: 'Post 2', text: 'Consectetur adipiscing elit.', comments_counter: 0,
+                               likes_counter: 0, author_id: @user.id)
 
     Comment.create(text: 'First comment on post 1', author_id: @user.id, post_id: @first_post.id)
     Comment.create(text: 'Second comment on post 1', author_id: @user.id, post_id: @first_post.id)

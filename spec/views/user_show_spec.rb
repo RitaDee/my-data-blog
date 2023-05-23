@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'User Show Page', type: :feature do
-  before do
+RSpec.describe 'Renders users Show Page', type: :feature do
+  before(:each) do
     # Create necessary objects for the tests, such as a user and their posts
     @user = User.create(name: 'Rita', photo: 'profile.jpg', bio: 'Software Engineer', posts_counter: 6)
     Post.create(author: @user, title: 'Hi people', text: 'Lorem ipsum dolor sit amet.')
