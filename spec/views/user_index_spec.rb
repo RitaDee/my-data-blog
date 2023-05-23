@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature 'User Index Page', type: :feature do
-     before :each do
-    @user = User.create(name: 'Rita', photo: 'https://media.gettyimages.com/id/1278139568/', bio: 'Tech', posts_counter: 5)
+  before :each do
+    @user = User.create(name: 'Rita', photo: 'https://media.gettyimages.com/id/1278139568/', bio: 'Tech',
+                        posts_counter: 5)
   end
 
   scenario 'Displaying user information' do
@@ -22,8 +23,8 @@ RSpec.feature 'User Index Page', type: :feature do
     # Test: Display number of posts each user has written
     expect(page).to have_content('Number of posts: 1')
   end
-  
- scenario 'renders the user show page' do
+
+  scenario 'renders the user show page' do
     visit '/'
     click_link(@user.name, match: :first)
     expect(page).to have_content(@user.name)
