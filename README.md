@@ -45,6 +45,7 @@
 - **[Set up views for models]**
 - **[Use preprocessed HTML file with embedded Ruby code]**
 - **[Use layouts and templates for shared content]**
+- **[Write integration tests for views]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
