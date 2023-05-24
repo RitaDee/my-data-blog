@@ -1,10 +1,10 @@
-# <h1>List Users </h1>
+<h1>List Users </h1>
 
-# <div class="sign_out_button">
-#   <button>
-#     <%= link_to 'Sign out',  destroy_user_session_path, method: :delete %>
-#   </button>
-# </div>
-# <% @users.each do |user| %>
-#     <%= render 'partials/user', user:user%>
-# <%end%>
+<div class="sign_out_button">
+  <button>
+    <%= link_to 'Sign out',  destroy_user_session_path, method: :delete %>
+  </button>
+</div>
+<% @users.each do |user| %>
+    <%= render 'partials/user', user:user%>
+<%end%>
