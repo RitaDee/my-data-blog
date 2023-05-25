@@ -1,16 +1,23 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments)
-  end
-
-  def show
-    @post = Post.find(params[:id])
-    @user = User.find(@post.author_id)
+    @posts = @user.posts.includes(:author)
   end
 
   def new
-    @post = @current_user.posts.new
+    @post = Post.new
+    @current_user = current_user
+  end
+
+  def show
+    # @post = Post.find(params[:id])
+    # @user = User.find(@post.author_id)
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @comments = @post.comments.includes(:author)
+
   end
 
   def create
@@ -25,6 +32,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:new_post).permit(:title, :text)
   end
 end
