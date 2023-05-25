@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:author)
@@ -17,7 +17,6 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
     @comments = @post.comments.includes(:author)
-
   end
 
   def create
