@@ -1,36 +1,36 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments)
-  end
-
-  def show
-    @post = Post.find(params[:id])
+    @posts = @user.posts.includes(:author)
   end
 
   def new
-    @post = @current_user.posts.new
+    @post = Post.new
+    @current_user = current_user
+  end
+
+  def show
+    # @post = Post.find(params[:id])
+    # @user = User.find(@post.author_id)
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @comments = @post.comments.includes(:author)
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.new(post_params)
-    @post.comments_counter = 0
-    @post.likes_counter = 0
-    respond_to do |format|
-      format.html do
-        if @post.save
-          redirect_to user_posts_path(@user)
-        else
-          render :new, locals: { post: @post }
-        end
-      end
+    @post = current_user.posts.new(post_params)
+    if @post.save
+      redirect_to user_posts_path(current_user)
+    else
+      render :new
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:new_post).permit(:title, :text)
   end
 end
