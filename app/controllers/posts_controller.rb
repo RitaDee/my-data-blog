@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
 
   def index
@@ -25,6 +26,17 @@ class PostsController < ApplicationController
       redirect_to user_posts_path(current_user)
     else
       render :new
+    end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    respond_to do |format|
+      format.html do
+        redirect_to user_posts_path(params[:user_id]),
+                    notice: 'post deleted successfully'
+      end
     end
   end
 
