@@ -1,2 +1,5 @@
-<p><span>Username:</span><%=comment.author.name %>
-<span>Comment:</span><%=comment.text %> </p>
+<p><span>Username:</span><%= comment.author.name %></p>
+<p><span>Comment:</span><%= comment.text %></p>
+<% if can? :destroy, comment %>
+  <%= button_to  'Delete', user_post_comment_path(@current_user, comment.post, comment), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class: 'text-red-500 hover:text-red-600' %>
+<% end %>
