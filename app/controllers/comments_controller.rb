@@ -1,12 +1,11 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
-  
+
   def new
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new
   end
 
-  
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
